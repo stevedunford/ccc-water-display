@@ -143,33 +143,33 @@ void loop() {
  */
 void runPump() {
   switch (pumpPos) {
-    case 1: // Pump pattern *__*_
-      digitalWrite(pump1, ON);
-      digitalWrite(pump2, OFF);
-      digitalWrite(pump3, OFF);
-      digitalWrite(pump4, ON);
-      digitalWrite(pump5, OFF);
-      break;
-      
-    case 2: // Pump pattern _*__*
-      digitalWrite(pump1, OFF);
-      digitalWrite(pump2, ON);
-      digitalWrite(pump3, OFF);
-      digitalWrite(pump4, OFF);
-      digitalWrite(pump5, ON);
-      break;
-      
-    case 3: // Pump pattern __*__
-      digitalWrite(pump1, OFF);
-      digitalWrite(pump2, OFF);
-      digitalWrite(pump3, ON);
-      digitalWrite(pump4, OFF);
-      digitalWrite(pump5, OFF);
-      pumpPos = 1;
-      return;
+    case 1: // Pump pattern _****
+    digitalWrite(pump1, OFF);
+    digitalWrite(pump5, ON);
+    break;
+    
+    case 2: // Pump pattern *_***
+    digitalWrite(pump2, OFF);
+    digitalWrite(pump1, ON);
+    break;
+    
+    case 3: // Pump pattern **_**
+    digitalWrite(pump3, OFF);
+    digitalWrite(pump2, ON);
+    break;
+    
+    case 4: // Pump pattern ***_*
+    digitalWrite(pump4, OFF);
+    digitalWrite(pump3, ON);
+    break;
+    
+    case 5: // Pump pattern ****_
+    digitalWrite(pump5, OFF);
+    digitalWrite(pump4, ON);
+    break;
   }
   pumpPos++;
-  if (pumpPos > 3) pumpPos = 1; // Just in case it somehow overflows. Should NEVER happen
+  if (pumpPos > 5) pumpPos = 1; // Loop around
 }
 
 
