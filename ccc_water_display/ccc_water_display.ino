@@ -1,3 +1,10 @@
+/**
+ * CCC Water Display 
+ * 
+ * author:   S Dunford
+ * licence:  Beerware - if you find it useful, buy me a beer
+ */
+ 
 #define ON LOW
 #define OFF HIGH
 #define ENABLE 1
